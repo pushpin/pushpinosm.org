@@ -16,7 +16,7 @@ pp.helpers =
     joined   = _.compact([postal, country]).join(', ')
 
     if lineOne.length is 0 && lineTwo.length is 0 && country.length is 0 and postal.length is 0
-      "No address available for this record. Download Pushpin and help contribute to open data!"
+      "No address available for this record. Download<br>Pushpin and help contribute to open data!"
     else if lineOne.length > 0 && lineTwo.length > 0 && country.length > 0
       "#{lineOne.join(' ')}<br>#{lineTwo.join(', ')} #{joined}"
     else if lineOne.length > 0

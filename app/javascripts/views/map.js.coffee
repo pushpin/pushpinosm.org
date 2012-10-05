@@ -5,11 +5,11 @@ class pp.views.map extends Backbone.View
     @activeXHR = undefined
     @resetBoundingBox()
 
-  maxRecords: 200
+  maxRecords: 350
 
   baseURI: 'http://www.overpass-api.de/api/interpreter'
   baseQuery: ->
-    "[out:json];(node[source~'Pushpin|Fulcrum'];);out #{@maxRecords};"
+    "[out:json];(node[source~'Pushpin|Fulcrum'];);out meta #{@maxRecords};"
 
   render: ->
     @tileLayer = mapbox.layer().id('spatialnetworks.map-jt158wp6')
@@ -32,7 +32,7 @@ class pp.views.map extends Backbone.View
     , 8000
 
   buildQuery: (query) ->
-    "[out:json];(node[source~'Pushpin|Fulcrum'][name~'#{query}'];);out #{@maxRecords};"
+    "[out:json];(node[source~'Pushpin|Fulcrum'][name~'#{query}'];);out meta #{@maxRecords};"
 
   fetchWithCustomQuery: (query)->
     query = @buildQuery(query)
@@ -51,6 +51,7 @@ class pp.views.map extends Backbone.View
 
   queryCallback: (json) =>
     features = []
+    console.log json
     if json && json.elements && json.elements.length > 0
       for element in json.elements
         features.push @createFeature(element)
