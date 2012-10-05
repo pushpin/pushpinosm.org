@@ -18,27 +18,38 @@
     /[if lt IE 8]
       <script src="http://www.json.org/json2.js"></script>
   %body.home
-    #topbar
-      #search
-        %img{src: '[{path_to(spinner.gif)}]', style: 'opacity: 0.8'}
-        %form.form-search
-          .input-append
-            %input.span4.search-query{:type => "text"}
-            %button.btn{:type => "submit"}
-              %i.icon-search
-              Search POIs
-      %img.logo{src: '[{path_to(icon.png)}]'}
-      %h1.page-title
-        Pushpin OSM
+    .container
+      %header
+        #search
+          %img{src: '[{path_to(spinner.gif)}]', style: 'opacity: 0.8'}
+          %form.form-search
+            .input-append
+              %input.span3.search-query{:type => "text"}
+              %button.btn{:type => "submit"}
+                %i.icon-search
+                Search POIs
+        %img.logo{src: '[{path_to(icon.png)}]'}
+        %h1.page-title
+          Pushpin OSM
 
-    #map
-    #no-results
-      No results match that search query. Please try again.
+      #map
+      #no-results
+        No results match that search query. Please try again.
+    %footer
+      %p.left
+        Project maintained by
+        %a{href: 'http://github.com/zhm'} Spatial Networks
+        and is powered by
+        %a{href: 'http://fulcrumapp.com/'} Fulcrum
+      %p.right
+        Pushpin is available on
+        %a{href: 'http://itunes.apple.com/us/app/pushpin-osm/id565850639?mt=8'}iTunes and the App Store
+
     %script#popupTemplate{:type => "text/template"}
       <% for (prop in properties.element.tags) { %>
       <%= prop %>: <%= properties.element.tags[prop] %><br/>
       <% } %>
-      <a href="http://www.openstreetmap.org/browse/node/<%= properties.element.id %>" target="_blank">View this on OpenStreetMap</a>
+      %a{href: "http://www.openstreetmap.org/browse/node/<%= properties.element.id %>", target: "_blank"}View this on OpenStreetMap
 
   :javascript
     var _gaq = _gaq || [];
