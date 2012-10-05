@@ -39,18 +39,19 @@
     %footer
       %p.left
         Project maintained by
-        %a{href: 'http://github.com/zhm'} Spatial Networks
+        %a{href: 'http://www.spatialnetworks.com/'} Spatial Networks
         and is powered by
         %a{href: 'http://fulcrumapp.com/'} Fulcrum
       %p.right
         Pushpin is available on
-        %a{href: 'http://itunes.apple.com/us/app/pushpin-osm/id565850639?mt=8'}iTunes and the App Store
+        %a{href: 'http://itunes.apple.com/us/app/pushpin-osm/id565850639?mt=8', target: '_blank'} iTunes and the App Store
 
     %script#popupTemplate{:type => "text/template"}
-      <% for (prop in properties.element.tags) { %>
-      <%= prop %>: <%= properties.element.tags[prop] %><br/>
-      <% } %>
-      %a{href: "http://www.openstreetmap.org/browse/node/<%= properties.element.id %>", target: "_blank"}View this on OpenStreetMap
+      %strong <%= properties.element.tags.name %><br/>
+      %p.address <%= pp.helpers.formatAddress(properties.element.tags) %>
+      %hr
+      <a href="http://www.openstreetmap.org/browse/node/<%= properties.element.id %>" target="_blank">View this on OpenStreetMap
+
 
   :javascript
     var _gaq = _gaq || [];
