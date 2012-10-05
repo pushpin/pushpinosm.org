@@ -36,13 +36,31 @@
     findTag: function(tags) {
       var index;
       if (tags.shop) {
-        return 'shop';
+        switch (tags.shop) {
+          case 'supermarket':
+            return 'grocery';
+          default:
+            return 'shop';
+        }
       }
       if (tags.leisure) {
         return 'pitch';
       }
+      if (tags.aeroway) {
+        return 'airport';
+      }
+      if (tags.office) {
+        switch (tags.office) {
+          case 'government':
+            return 'town-hall';
+          default:
+            return 'commercial';
+        }
+      }
       if (tags.tourism) {
         switch (tags.tourism) {
+          case 'motel':
+            return 'lodging';
           case 'hotel':
             return 'lodging';
           case 'museum':
@@ -55,12 +73,14 @@
         switch (tags.amenity) {
           case 'place_of_worship':
             return pp.maki.placeOfWorship(tags);
+          case 'post_office':
+            return 'post';
+          case 'post_box':
+            return 'post';
           case 'courthouse':
             return 'prison';
           case 'fire_station':
             return 'fire-station';
-          case 'post_office':
-            return 'post';
           case 'grave_yard':
             return 'cemetery';
           case 'department_store':
@@ -71,6 +91,10 @@
             return 'beer';
           case 'stadium':
             return 'soccer';
+          case 'ice_cream':
+            return 'restaurant';
+          case 'fitness_center':
+            return 'pitch';
           default:
             index = _.indexOf(pp.maki.tags, tags.amenity);
             if (index === -1) {
@@ -277,7 +301,6 @@
     map.prototype.queryCallback = function(json) {
       var element, features, _i, _len, _ref;
       features = [];
-      console.log(json);
       if (json && json.elements && json.elements.length > 0) {
         _ref = json.elements;
         for (_i = 0, _len = _ref.length; _i < _len; _i++) {
