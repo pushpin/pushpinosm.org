@@ -21,6 +21,14 @@ class pp.views.map extends Backbone.View
     @mapbox.centerzoom { lat: 34, lon: 0 }, 3
     @mapbox.ui.zoomer.add()
     @mapbox.ui.zoombox.add()
+    @mapbox.ui.attribution.add()
+    $attribution = $('.map-attribution')
+    $attribution.html("Tiles Courtesy of <a href=\"http://www.mapbox.com/\" target=\"_blank\">
+      MapBox</a> — “<a target=\"_blank\" href=\"http://creativecommons.org/licenses/by-sa/2.0/\">
+      CC-BY-SA</a>  2012  <a target=\"_blank\" href=\"http://openstreetmap.org\">
+      OpenStreetMap.org</a>  contributors”")
+
+
 
   renderNoSearchResults: ->
     @removeMarkerLayer()

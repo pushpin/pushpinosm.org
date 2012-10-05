@@ -7,8 +7,8 @@ class pp.views.search extends Backbone.View
     @router = options.router
     @controller = options.controller
 
-    $('img').ajaxStart -> $(this).fadeIn()
-    $('img').ajaxStop -> $(this).fadeOut()
+    @$('img').ajaxStart -> $(this).fadeIn()
+    @$('img').ajaxStop -> $(this).fadeOut()
 
   search: (event) =>
     query = @$('input').val()

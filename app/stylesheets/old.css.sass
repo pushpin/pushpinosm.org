@@ -29,24 +29,34 @@ body
   left: 0
   right: 0
   top: 0
-  height: 55px
+  height: 62px
   z-index: 99999
   background-color: rgba(0, 0, 0, 0.6)
   margin: 0
-  padding: 10px 10px 0px 10px
+  padding: 3px 10px
   color: #f9f9f9
   text-shadow: 0px -2px 1px black
 
   .page-title
+    position: relative
+    top: 10px
     font-family: 'Gudea', sans-serif
-    padding-top: 2px
     font-size: 32pt
-    font-weight: normal
-    margin: 0
+    margin: 0 5px
+    display: inline
+
+  img.logo
+    display: inline
+    height: 57px
+    width: 57px
+    border-radius: 8px
+    -webkit-box-shadow: 1px 1px 5px rgba(50, 50, 50, 0.75)
+    -moz-box-shadow:    1px 1px 5px rgba(50, 50, 50, 0.75)
+    box-shadow:         1px 1px 5px rgba(50, 50, 50, 0.75)
 
   #search
     position: relative
-    padding-top: 5px
+    top: 13px
     padding-right: 10px
     float: right
 
@@ -54,7 +64,7 @@ body
       position: absolute
       right: 145px
       z-index: 9999
-      top: 12px
+      top: 7px
       display: none
 
 .marker-popup
