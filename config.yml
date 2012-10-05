@@ -8,3 +8,4 @@ staging:
 production:
   deploy_strategy: local
   deploy_path: compiled/production
+  compress: true
