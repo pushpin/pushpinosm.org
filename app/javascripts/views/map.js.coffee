@@ -64,6 +64,7 @@ class pp.views.map extends Backbone.View
     @activeXHR = undefined
 
   createFeature: (element) ->
+    console.log element
     geometry:
       type: "Point"
       coordinates: [element.lon, element.lat]
