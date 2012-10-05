@@ -47,7 +47,9 @@
         %a{href: 'http://itunes.apple.com/us/app/pushpin-osm/id565850639?mt=8', target: '_blank'} iTunes and the App Store
 
     %script#popupTemplate{:type => "text/template"}
+      <% if (!_.isEmpty(properties.element.tags.name)) { %>
       %strong <%= properties.element.tags.name %><br/>
+      <% } %>
       %p.address <%= pp.helpers.formatAddress(properties.element.tags) %>
       %hr
       %p.editor Edited by: <%= properties.element.user %>

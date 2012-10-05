@@ -51,7 +51,6 @@ class pp.views.map extends Backbone.View
 
   queryCallback: (json) =>
     features = []
-    console.log json
     if json && json.elements && json.elements.length > 0
       for element in json.elements
         features.push @createFeature(element)
