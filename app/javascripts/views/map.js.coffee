@@ -28,8 +28,6 @@ class pp.views.map extends Backbone.View
       CC-BY-SA</a>  2012  <a target=\"_blank\" href=\"http://openstreetmap.org\">
       OpenStreetMap.org</a>  contributors”")
 
-
-
   renderNoSearchResults: ->
     @removeMarkerLayer()
     $('#no-results').fadeIn()
@@ -71,8 +69,8 @@ class pp.views.map extends Backbone.View
       coordinates: [element.lon, element.lat]
 
     properties:
-      'marker-color': '#808080',
-      'marker-symbol': 'marker-stroked',
+      'marker-color': '#377099',
+      'marker-symbol': 'marker',
       element: element
 
   addFeatures: (features) ->
