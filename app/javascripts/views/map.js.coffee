@@ -64,14 +64,13 @@ class pp.views.map extends Backbone.View
     @activeXHR = undefined
 
   createFeature: (element) ->
-    console.log element
     geometry:
       type: "Point"
       coordinates: [element.lon, element.lat]
 
     properties:
       'marker-color': '#377099',
-      'marker-symbol': 'marker',
+      'marker-symbol': pp.maki.findTag(element.tags),
       element: element
 
   addFeatures: (features) ->
