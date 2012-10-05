@@ -6,17 +6,13 @@ class pp.views.map extends Backbone.View
     @resetBoundingBox()
 
   maxRecords: 200
-  mapSettings: [
-    "base.live-land-tr", "base.live-landuse-tr",
-    "base.live-water",   "base.live-streets"
-  ]
 
   baseURI: 'http://www.overpass-api.de/api/interpreter'
   baseQuery: ->
     "[out:json];(node[source~'Pushpin|Fulcrum'];);out #{@maxRecords};"
 
   render: ->
-    @tileLayer = mapbox.layer().id(@mapSettings.join(','))
+    @tileLayer = mapbox.layer().id('spatialnetworks.map-jt158wp6')
     @mapbox.addLayer(@tileLayer)
     @mapbox.centerzoom { lat: 34, lon: 0 }, 3
     @mapbox.ui.zoomer.add()
@@ -31,6 +27,9 @@ class pp.views.map extends Backbone.View
   renderNoSearchResults: ->
     @removeMarkerLayer()
     $('#no-results').fadeIn()
+    setTimeout ->
+      $('#no-results').fadeOut()
+    , 8000
 
   buildQuery: (query) ->
     "[out:json];(node[source~'Pushpin|Fulcrum'][name~'#{query}'];);out #{@maxRecords};"
