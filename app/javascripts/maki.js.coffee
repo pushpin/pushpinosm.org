@@ -13,7 +13,7 @@ pp.maki =
     'pharmacy', 'hospital', 'minefield', 'industrial', 'warehouse', 'commercial' ]
 
   findTag: (tags) =>
-    if tags.shop    then
+    if tags.shop
       return switch tags.shop
         when 'supermarket' then 'grocery'
         else 'shop'
