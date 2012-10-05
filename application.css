@@ -22,10 +22,12 @@ html body .marker-popup hr {
   margin: 4px 0;
 }
 /* line 25, /Users/tylerjohnst/Dev/pushpinosm.org/app/stylesheets/application.css.sass */
-html body .marker-popup a {
+html body .marker-popup a, html body .marker-popup p.editor {
+  margin: 0;
+  padding: 0;
   font-size: 12px;
 }
-/* line 28, /Users/tylerjohnst/Dev/pushpinosm.org/app/stylesheets/application.css.sass */
+/* line 31, /Users/tylerjohnst/Dev/pushpinosm.org/app/stylesheets/application.css.sass */
 html body footer {
   position: absolute;
   bottom: 15px;
@@ -33,24 +35,24 @@ html body footer {
   right: 33px;
   color: #cccccc;
 }
-/* line 35, /Users/tylerjohnst/Dev/pushpinosm.org/app/stylesheets/application.css.sass */
+/* line 38, /Users/tylerjohnst/Dev/pushpinosm.org/app/stylesheets/application.css.sass */
 html body footer a {
   color: white;
   font-weight: bold;
 }
-/* line 39, /Users/tylerjohnst/Dev/pushpinosm.org/app/stylesheets/application.css.sass */
+/* line 42, /Users/tylerjohnst/Dev/pushpinosm.org/app/stylesheets/application.css.sass */
 html body footer a:hover {
   color: white;
 }
-/* line 42, /Users/tylerjohnst/Dev/pushpinosm.org/app/stylesheets/application.css.sass */
+/* line 45, /Users/tylerjohnst/Dev/pushpinosm.org/app/stylesheets/application.css.sass */
 html body footer .left {
   float: left;
 }
-/* line 45, /Users/tylerjohnst/Dev/pushpinosm.org/app/stylesheets/application.css.sass */
+/* line 48, /Users/tylerjohnst/Dev/pushpinosm.org/app/stylesheets/application.css.sass */
 html body footer .right {
   float: right;
 }
-/* line 48, /Users/tylerjohnst/Dev/pushpinosm.org/app/stylesheets/application.css.sass */
+/* line 51, /Users/tylerjohnst/Dev/pushpinosm.org/app/stylesheets/application.css.sass */
 html body .container {
   width: auto;
   position: absolute;
@@ -71,7 +73,7 @@ html body .container {
   -o-box-shadow: rgba(0, 0, 0, 0.2) 0 0 0 1px, rgba(0, 0, 0, 0.45) 0 3px 10px;
   box-shadow: rgba(0, 0, 0, 0.2) 0 0 0 1px, rgba(0, 0, 0, 0.45) 0 3px 10px;
 }
-/* line 68, /Users/tylerjohnst/Dev/pushpinosm.org/app/stylesheets/application.css.sass */
+/* line 71, /Users/tylerjohnst/Dev/pushpinosm.org/app/stylesheets/application.css.sass */
 html body .container header {
   -moz-border-radius: 8px 8px 0 0;
   -webkit-border-radius: 8px 8px 0 0;
@@ -91,20 +93,20 @@ html body .container header {
   border-bottom: 1px solid #b2d2e1;
   height: 33px;
 }
-/* line 87, /Users/tylerjohnst/Dev/pushpinosm.org/app/stylesheets/application.css.sass */
+/* line 90, /Users/tylerjohnst/Dev/pushpinosm.org/app/stylesheets/application.css.sass */
 html body .container header #search {
   float: right;
   position: relative;
   padding: 1px 0;
 }
-/* line 92, /Users/tylerjohnst/Dev/pushpinosm.org/app/stylesheets/application.css.sass */
+/* line 95, /Users/tylerjohnst/Dev/pushpinosm.org/app/stylesheets/application.css.sass */
 html body .container header #search img {
   position: absolute;
   right: 135px;
   top: 8px;
   z-index: 999;
 }
-/* line 98, /Users/tylerjohnst/Dev/pushpinosm.org/app/stylesheets/application.css.sass */
+/* line 101, /Users/tylerjohnst/Dev/pushpinosm.org/app/stylesheets/application.css.sass */
 html body .container header img.logo {
   display: inline;
   height: 29px;
@@ -114,7 +116,7 @@ html body .container header img.logo {
   -moz-box-shadow: 1px 1px 2px rgba(50, 50, 50, 0.2);
   box-shadow: 1px 1px 2px rgba(50, 50, 50, 0.2);
 }
-/* line 107, /Users/tylerjohnst/Dev/pushpinosm.org/app/stylesheets/application.css.sass */
+/* line 110, /Users/tylerjohnst/Dev/pushpinosm.org/app/stylesheets/application.css.sass */
 html body .container header h1 {
   display: inline;
   position: relative;
@@ -124,7 +126,7 @@ html body .container header h1 {
   text-shadow: rgba(255, 255, 255, 0.9) 0 1px 0;
   left: 5px;
 }
-/* line 116, /Users/tylerjohnst/Dev/pushpinosm.org/app/stylesheets/application.css.sass */
+/* line 119, /Users/tylerjohnst/Dev/pushpinosm.org/app/stylesheets/application.css.sass */
 html body .container header h1 small {
   display: block;
   font-size: 13px;
@@ -132,7 +134,30 @@ html body .container header h1 small {
   position: relative;
   top: -6px;
 }
-/* line 123, /Users/tylerjohnst/Dev/pushpinosm.org/app/stylesheets/application.css.sass */
+/* line 126, /Users/tylerjohnst/Dev/pushpinosm.org/app/stylesheets/application.css.sass */
+html body #no-results {
+  position: absolute;
+  bottom: 100px;
+  left: 0;
+  right: 0;
+  height: 50px;
+  width: 100%;
+  z-index: 9999;
+  display: none;
+}
+/* line 136, /Users/tylerjohnst/Dev/pushpinosm.org/app/stylesheets/application.css.sass */
+html body #no-results p {
+  width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+  background: rgba(0, 0, 0, 0.75);
+  padding: 10px 15px;
+  color: white;
+  text-align: center;
+  border-radius: 16px;
+  color: #cccccc;
+}
+/* line 147, /Users/tylerjohnst/Dev/pushpinosm.org/app/stylesheets/application.css.sass */
 html body #map {
   position: absolute;
   top: 55px;

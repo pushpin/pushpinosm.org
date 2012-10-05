@@ -43,7 +43,7 @@
       </header>
       <div id='map'></div>
       <div id='no-results'>
-        No results match that search query. Please try again.
+        <p>No results matched your search query.</p>
       </div>
     </div>
     <footer>
@@ -62,6 +62,7 @@
       <strong><%= properties.element.tags.name %><br/></strong>
       <p class='address'><%= pp.helpers.formatAddress(properties.element.tags) %></p>
       <hr />
+      <p class='editor'>Edited by: <%= properties.element.user %></p>
       <a href="http://www.openstreetmap.org/browse/node/<%= properties.element.id %>" target="_blank">View this on OpenStreetMap
     </script>
   </body>

@@ -116,7 +116,7 @@
       lineTwo = _.compact([locality, sub_admin_area]);
       joined = _.compact([postal, country]).join(', ');
       if (lineOne.length === 0 && lineTwo.length === 0 && country.length === 0 && postal.length === 0) {
-        return "No address available for this record. Download Pushpin and help contribute to open data!";
+        return "No address available for this record. Download<br>Pushpin and help contribute to open data!";
       } else if (lineOne.length > 0 && lineTwo.length > 0 && country.length > 0) {
         return "" + (lineOne.join(' ')) + "<br>" + (lineTwo.join(', ')) + " " + joined;
       } else if (lineOne.length > 0) {
@@ -218,19 +218,17 @@
       return this.resetBoundingBox();
     };
 
-    map.prototype.maxRecords = 200;
-
-    map.prototype.mapSettings = ["base.live-land-tr", "base.live-landuse-tr", "base.live-water", "base.live-streets"];
+    map.prototype.maxRecords = 350;
 
     map.prototype.baseURI = 'http://www.overpass-api.de/api/interpreter';
 
     map.prototype.baseQuery = function() {
-      return "[out:json];(node[source~'Pushpin|Fulcrum'];);out " + this.maxRecords + ";";
+      return "[out:json];(node[source~'Pushpin|Fulcrum'];);out meta " + this.maxRecords + ";";
     };
 
     map.prototype.render = function() {
       var $attribution;
-      this.tileLayer = mapbox.layer().id(this.mapSettings.join(','));
+      this.tileLayer = mapbox.layer().id('spatialnetworks.map-jt158wp6');
       this.mapbox.addLayer(this.tileLayer);
       this.mapbox.centerzoom({
         lat: 34,
@@ -245,11 +243,14 @@
 
     map.prototype.renderNoSearchResults = function() {
       this.removeMarkerLayer();
-      return $('#no-results').fadeIn();
+      $('#no-results').fadeIn();
+      return setTimeout(function() {
+        return $('#no-results').fadeOut();
+      }, 8000);
     };
 
     map.prototype.buildQuery = function(query) {
-      return "[out:json];(node[source~'Pushpin|Fulcrum'][name~'" + query + "'];);out " + this.maxRecords + ";";
+      return "[out:json];(node[source~'Pushpin|Fulcrum'][name~'" + query + "'];);out meta " + this.maxRecords + ";";
     };
 
     map.prototype.fetchWithCustomQuery = function(query) {
@@ -276,6 +277,7 @@
     map.prototype.queryCallback = function(json) {
       var element, features, _i, _len, _ref;
       features = [];
+      console.log(json);
       if (json && json.elements && json.elements.length > 0) {
         _ref = json.elements;
         for (_i = 0, _len = _ref.length; _i < _len; _i++) {
