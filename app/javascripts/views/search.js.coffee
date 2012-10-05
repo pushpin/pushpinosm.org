@@ -12,7 +12,8 @@ class pp.views.search extends Backbone.View
 
   search: (event) =>
     query = @$('input').val()
-    @router.navigate("search/#{query}", trigger: true)
+    route = if query.length is 0 then '' else "search/#{query}"
+    @router.navigate(route, trigger: true)
     event.preventDefault()
 
   ajaxStart: ->
