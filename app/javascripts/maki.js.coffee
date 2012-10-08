@@ -48,6 +48,7 @@ pp.maki =
         when 'bicycle_rental'   then 'bicycle'
         when 'biergarten'       then 'beer'
         when 'bus_station'      then 'bus'
+        when 'bicycle_parking'  then 'bicycle'
         when 'courthouse'       then 'prison'
         when 'department_store' then 'shop'
         when 'fast_food'        then 'fast-food'
