@@ -7,5 +7,5 @@ staging:
 
 production:
   deploy_strategy: local
-  deploy_path: compiled/production
+  deploy_path: ../pushpin-gh_pages/
   compress: true
