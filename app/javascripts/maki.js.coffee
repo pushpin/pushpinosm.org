@@ -37,27 +37,29 @@ pp.maki =
 
     if tags.tourism
       return switch tags.tourism
-        when 'motel'  then 'lodging'
         when 'hotel'  then 'lodging'
+        when 'motel'  then 'lodging'
         when 'museum' then 'museum'
         else pp.maki.default
 
     if tags.amenity
       return switch tags.amenity
+        when 'atm'              then 'bank'
+        when 'bicycle_rental'   then 'bicycle'
+        when 'biergarten'       then 'beer'
+        when 'bus_station'      then 'bus'
+        when 'courthouse'       then 'prison'
+        when 'department_store' then 'shop'
+        when 'fast_food'        then 'fast-food'
+        when 'fire_station'     then 'fire-station'
+        when 'fitness_center'   then 'pitch'
+        when 'grave_yard'       then 'cemetery'
+        when 'ice_cream'        then 'restaurant'
         when 'place_of_worship' then pp.maki.find("religious-#{tags.religion}")
         when 'post_office'      then 'post'
         when 'post_box'         then 'post'
-        when 'courthouse'       then 'prison'
-        when 'fire_station'     then 'fire-station'
-        when 'grave_yard'       then 'cemetery'
-        when 'department_store' then 'shop'
-        when 'fast_food'        then 'fast-food'
         when 'pub'              then 'beer'
-        when 'biergarten'       then 'beer'
         when 'stadium'          then 'soccer'
-        when 'ice_cream'        then 'restaurant'
-        when 'fitness_center'   then 'pitch'
-        when 'bus_station'      then 'bus'
         when 'university'       then 'college'
         else pp.maki.find(tags.amenity)
 
