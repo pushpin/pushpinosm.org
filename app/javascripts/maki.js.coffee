@@ -17,21 +17,34 @@ pp.maki =
       return switch tags.shop
         when 'supermarket' then 'grocery'
         else 'shop'
-    if tags.leisure then return 'pitch'
+
+    if tags.leisure  then return pp.maki.find(tags.sport, 'pitch')
+
+    if tags.historic then return pp.maki.find(tags.historic)
+
+    if tags.railway  then return 'rail'
+
+    if tags.highway
+      return switch tags.highway
+        when 'bus_stop' then 'bus'
+
     if tags.aeroway then return 'airport'
+
     if tags.office
       return switch tags.office
         when 'government' then 'town-hall'
         else 'commercial'
+
     if tags.tourism
       return switch tags.tourism
         when 'motel'  then 'lodging'
         when 'hotel'  then 'lodging'
         when 'museum' then 'museum'
         else pp.maki.default
+
     if tags.amenity
       return switch tags.amenity
-        when 'place_of_worship' then pp.maki.placeOfWorship(tags)
+        when 'place_of_worship' then pp.maki.find("religious-#{tags.religion}")
         when 'post_office'      then 'post'
         when 'post_box'         then 'post'
         when 'courthouse'       then 'prison'
@@ -40,19 +53,17 @@ pp.maki =
         when 'department_store' then 'shop'
         when 'fast_food'        then 'fast-food'
         when 'pub'              then 'beer'
+        when 'biergarten'       then 'beer'
         when 'stadium'          then 'soccer'
         when 'ice_cream'        then 'restaurant'
         when 'fitness_center'   then 'pitch'
-        else
-          index = _.indexOf(pp.maki.tags, tags.amenity)
-          if index is -1 then pp.maki.default else pp.maki.tags[index]
-    else
-      pp.maki.default
+        when 'bus_station'      then 'bus'
+        when 'university'       then 'college'
+        else pp.maki.find(tags.amenity)
 
-  placeOfWorship: (tags) ->
-    if tags.religion
-      tag = "religious-#{tags.religion}"
-      index = _.indexOf(pp.maki.tags, tag)
-      if index is -1 then pp.maki.default else pp.maki.tags[index]
-    else
-      pp.maki.default
+    return pp.maki.default
+
+  find: (tag, fallback=pp.maki.default) ->
+    index = _.indexOf(pp.maki.tags, tag)
+    if index is -1 then fallback else pp.maki.tags[index]
+
