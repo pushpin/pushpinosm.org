@@ -1,0 +1,36 @@
+<p>Used for any feature or venue that has hours of operation.</p>
+
+<h2>Usage Examples</h2>
+<em>Text to be entered for each example is shown in bold.</em>
+<strong>24/7</strong> &mdash; for non-stop facilities.
+<strong>Sa-Su 00:00-24:00</strong> &mdash; Open on the weekend non-stop, but closed or out of operation during weekdays.
+<strong>Mo-Fr 06:00-22:00</strong> &mdash; Open weekdays from 6:00am to 10:00pm.
+<strong>Mo-Fr 08:00-15:00,17:00-21:00; Sa 08:00-12:00</strong> &mdash; Open weekdays from 8:00am to 3:00pm and 5:00pm to 9:00pm, and Saturdays from 8:00am to 12:00pm.
+<strong>sunrise-sunset</strong> &mdash; Open sunrise to sunset, as with some public parks.
+
+<h2>General Syntax Reference</h2>
+<h3>Days of the Week</h3>
+<p>Mo, Tu, We, Th, Fr, Sa, Su</p>
+
+<h3>Times</h3>
+<p>Time should be entered in 24 hour format:</p>
+<p>08:30-20:00</p>
+
+
+<h2>Other Rules</h2>
+<ul>
+  <li>Consecutive hours [always needs open-close] separated by "-" (e.g., > 08:30-20:00)</li>
+  <li>Consecutive weekdays open separated by "-" (e.g., > Mo-Fr)</li>
+  <li>Consecutive monthdays open separated by "-" (e.g., > Dec 20-26) or (e.g., > Dec 20-Jan 06)</li>
+  <li>A break on days separated by "," (e.g., > Mo,We,Fr)</li>
+  <li>A break on hours separated by "," (e.g., > 08:30-14:00,16:30-20:00)</li>
+  <li>Different hours on different days are separated by ";" (e.g., > Mo 10:00-12:00,12:30-15:00; Tu-Fr 08:00-12:00,12:30-15:00; Sa 08:00-12:00)</li>
+  <li>A weekday off will be tagged as "wd off" (e.g., > Tu off)</li>
+  <li>A range of weekdays off will be tagged as "wd-wd off" (e.g., > Tu-Th off)</li>
+  <li>A weekday off will be tagged as "wd off" (e.g., > Tu off)</li>
+  <li>A range of weekdays off will be tagged as "wd-wd off" (e.g., > Tu-Th off)</li>
+  <li>A month off will be tagged as "mo off" (e.g., > Aug off )</li>
+  <li>A range of months off will be tagged as "mo-mo off" (e.g., > Aug-Sep off)</li>
+  <li>A monthday off will be tagged as "mo md off" (e.g., > Dec 25 off)</li>
+  <li>A range of monthdays off will be tagged as "mo md-md off" (e.g., > Dec 24-26 off) or "mo md - mo md off" (e.g., > Dec 25-Jan 06 off )</li>
+</ul>
