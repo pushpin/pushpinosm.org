@@ -3,7 +3,7 @@ window.onload = function() {
 
   $.get(url, function(json) {
     if (json) {
-      $('#total-edits').html('<table><tr><td class="left">Total Edits</td><td class="right"><strong>' + json.total_edits + '</strong></td></tr><tr><td class="left">Active Users</td><td class="right"><strong>' + json.top_users.length + '</strong></td></tr></table>');
+      $('#total-edits').html('<table><tr><td class="left">Total Edits</td><td class="right"><strong>' + json.total_edits + '</strong></td></tr><tr><td class="left">Active Users</td><td class="right"><strong>' + json.top_users.length + '</strong></td></tr><tr><td></td><td class="return"><a href="/">&laquo; Return Home</a></td></tr></table>');
 
       recent_html = '';
       _.each(json.recent_edits, function(edit) {
