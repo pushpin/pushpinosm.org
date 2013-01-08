@@ -41,8 +41,7 @@ a:hover {
 	margin: 0 auto;
 	padding: 20px;
 	background-color: #fff;
-	border-left: 1px solid #ddd;
-	border-right: 1px solid #ddd;
+	border: 1px solid #ddd;
 }
 .stats-header {
 	margin-bottom: 15px;
@@ -92,7 +91,9 @@ span.osm {
 .logo {
 	float:right;
 }
-
+.about h2 {
+	margin-top: 15px;
+}
 .map {
 	margin-top: 15px;
 }
