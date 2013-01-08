@@ -92,6 +92,10 @@ span.osm {
 .logo {
 	float:right;
 }
+
+.map {
+	margin-top: 15px;
+}
 .summary {
 	float: right;
 	text-align: right;
