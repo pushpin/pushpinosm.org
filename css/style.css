@@ -144,6 +144,7 @@ span.osm {
 	text-align: center;
 	font-size: 10pt;
 	color: #aaa;
+	padding-top: 30px;
 }
 .footer img {
 	vertical-align: middle;
@@ -151,6 +152,7 @@ span.osm {
 }
 .download {
 	text-align: center;
+	margin-top: 25px;
 }
 .iphone {
 	float: right;
