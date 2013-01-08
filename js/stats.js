@@ -14,7 +14,7 @@ window.onload = function() {
 
       top_users = '';
       _.each(json.top_users, function(user, index) {
-        top_users += '<div class="user">' + (index + 1) + '.) <a href="http://www.openstreetmap.org/user/' + user.name + '" class="top-user">' + user.name + '</a> (' + user.edits + ' edits)</div>';
+        top_users += '<div class="user">' + (index + 1) + ') <a href="http://www.openstreetmap.org/user/' + user.name + '" class="top-user">' + user.name + '</a> (' + user.edits + ' edits)</div>';
       });
 
       $('#top-users').html(top_users);

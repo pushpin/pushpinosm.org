@@ -1,3 +1,13 @@
+---
+navigation:
+  - title: About
+    path: /about
+  - title: Maps
+    path: /maps
+  - title: Stats
+    path: /stats
+---
+
 <!DOCTYPE html >
 <html>
 <head>
@@ -12,13 +22,28 @@
   <link href="http://fonts.googleapis.com/css?family=Gudea:400,700,400italic" rel="stylesheet" type="text/css">
   <link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
   <link rel='shortcut icon' href='{{site.url}}/favicon.ico' type='image/x-icon' />
+  {% if page.category == "stats" %}
   <script src="/js/stats.js"></script>
   <script src="/js/moment.js"></script>
+  {% endif %}
   <link rel="stylesheet" href="/css/style.css" />
   <!--[if lt IE 8]>
     <script src="http://www.json.org/json2.js"></script>
   <![endif]-->
-  {% include ga.html %}
+  <!-- include Cycle plugin -->
+  <script type="text/javascript" src="http://cloud.github.com/downloads/malsup/cycle/jquery.cycle.all.2.74.js"></script>
+
+  <!--  initialize the slideshow when the DOM is ready -->
+  <script type="text/javascript">
+  $(document).ready(function() {
+      $('.screens').cycle({
+      fx: 'scrollLeft', // choose your transition type, ex: fade, scrollUp, shuffle, etc...
+      speed: 500,
+      timeout: 6000
+    });
+  });
+  </script>
+  {% include google-analytics.html %}
 </head>
 <body class="home">
   {{content}}

@@ -1,7 +1,7 @@
 body {
 	margin:0;
 	padding:0;
-	font-family: Sans-Serif;
+	font-family: "Gudea", sans-serif;
 	background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAeCAYAAABNChwpAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAALEgAACxIB0t1+/AAAABx0RVh0U29mdHdhcmUAQWRvYmUgRmlyZXdvcmtzIENTNXG14zYAAAAUdEVYdENyZWF0aW9uIFRpbWUAMy82LzEygrTcTAAAAFRJREFUSIljfPDggZRf5RIGGNjUHsNATz6jXmSL1Kb2GLiAX+USBnrymRgGGDCORgFmoNAXjEbBaBSMRsFoFIxGwWgUjEbBaBSMRsFoFIxGwWgUAABYNujumib3wAAAAABJRU5ErkJggg==") fixed;
 	height: 100%;
 	color: #444;
@@ -14,11 +14,11 @@ h1 {
 	padding: 0;
 	color: #069;
 }
+h1 a { text-decoration:none; }
 h2 {
-	margin: 20px 0 0 0;
+	margin: 5px 0 0 0;
 }
 h2.title {
-	border-top: 1px solid #ddd;
 	border-bottom: 1px solid #ddd;
 	padding: 5px 0;
 }
@@ -30,6 +30,7 @@ a:hover {
 }
 .main-title {
 	color: #999;
+	vertical-align: middle;
 	font-size: 20pt;
 }
 .stats-title {
@@ -43,13 +44,50 @@ a:hover {
 	border-left: 1px solid #ddd;
 	border-right: 1px solid #ddd;
 }
+.stats-header {
+	margin-bottom: 15px;
+}
+.banner {
+	border-bottom: 1px solid #ddd;
+}
 .banner ul {
 	padding: 0;
-	margin: 10px 0;
+	margin: 20px 0 10px 0;
 }
 .banner ul li {
 	display: inline;
 	padding-right: 10px;
+}
+.banner li a {
+	text-decoration: none;
+	padding: 5px;
+	font-size: 14pt;
+}
+.banner li a:hover {
+	background-color: #069;
+	color: #fff;
+}
+.banner li a.active {
+	background-color: #069;
+	color: #fff;
+}
+.home {
+	margin-top: 30px;
+}
+h2.intro {
+	font-size: 30pt;
+	color: #666;
+}
+span.pushpin {
+	color: #069;
+}
+span.osm {
+	color: #95c47b;
+}
+.copy {
+	float: left;
+	padding-right: 15px;
+	width: 520px;
 }
 .logo {
 	float:right;
@@ -70,7 +108,6 @@ a:hover {
 .summary td.return {
 	font-size: 8pt;
 }
-
 .column-left {
 	float: left;
 	width: 700px;
@@ -103,7 +140,7 @@ a:hover {
 }
 
 .footer {
-	clear: left;
+	clear: both;
 	text-align: center;
 	font-size: 10pt;
 	color: #aaa;
@@ -112,3 +149,30 @@ a:hover {
 	vertical-align: middle;
 	padding: 0 10px;
 }
+.download {
+	text-align: center;
+}
+.iphone {
+	float: right;
+	background:url(../img/iphone5-chrome.png) no-repeat;
+	height:831px;
+	position:relative;
+	width:400px;
+}
+.screens { 
+	position:absolute;
+	top:123px;
+	right:35px;
+}
+.screens img { position:absolute;
+	height:588px;
+	width:331px;
+	top:0px;
+	right:0px;
+}
+/*
+
+640 x 1136
+320 x 568
+320 x 480
+*/
