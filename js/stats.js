@@ -3,6 +3,9 @@ window.onload = function() {
 
   $.get(url, function(json) {
     if (json) {
+      if (typeof(json) === 'string')
+        json = JSON.parse(json); // uhhh, firefox?
+
       numberOfEditsInLast24Hours = 0;
 
       var now = moment(new Date);
