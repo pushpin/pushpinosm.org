@@ -166,7 +166,7 @@ span.osm {
 	position:relative;
 	width:400px;
 }
-.screens { 
+.screens {
 	position:absolute;
 	top:123px;
 	right:35px;
@@ -176,6 +176,27 @@ span.osm {
 	width:331px;
 	top:0px;
 	right:0px;
+}
+
+.edits-by-day {
+}
+
+path, rect {
+  fill: #069;
+  border-left: 1px solid #068;
+}
+
+.y.axis {
+  font-size: 7pt;
+}
+
+.x.axis {
+  font-size: 9pt;
+  margin-top: 4px;
+}
+
+.axis path.domain {
+  display: none;
 }
 /*
 
